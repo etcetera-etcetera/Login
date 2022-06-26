@@ -3,41 +3,140 @@
   src: url("./Circular.ttf");
 }
 
+body {
+  font-family: "circular", sans-serif;
+  font-weight: 400;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 .tabs {
   display: flex;
   width: max-content;
   margin-inline: auto;
+  margin-bottom: 10px;
 }
 
 .tab {
   font-size: 16px;
   margin-inline: 10px;
   cursor: pointer;
-  font-family: "circular", "Roboto", sans-serif;
   position: relative;
 }
 
-.tab.active::before {
+.tab.active::before,
+.tab.inactive::before {
   content: "";
-  height: 2px;
+  height: 3px;
   width: 100%;
   background: #f85563;
   position: absolute;
-  bottom: -5px;
+  bottom: -8px;
   display: block;
 }
 
-.loginForm {
-  width: 50vw;
-  max-width: 500px;
-  min-width: 2rem;
+.tab.active::before {
+  animation: activeClick forwards;
+  animation-duration: 0.5s;
+}
+
+.tab.inactive::before {
+  animation: deactivate forwards;
+  animation-duration: 0.2s;
+}
+
+@keyframes activeClick {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes deactivate {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+.form {
+  width: clamp(200px, 50vw, 400px);
   margin-inline: auto;
 }
 
-.rightAligned {
-  text-align: right;
+.form .textInput {
+  padding: 15px;
+  width: calc(100% - 30px);
+  font-size: 16px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-family: "circular", sans-serif;
+  font-weight: 400;
 }
 
 .field {
-  width: 100%;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #888;
+  transition: 0.2s;
+  font-family: "circular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.top-spacing {
+  margin-top: 15px;
+}
+
+.field:focus-within .label {
+  top: 20px;
+  font-size: 12px;
+}
+
+.field:focus-within .textInput {
+  padding-top: 30px;
+  border: 2px solid #ccc;
+}
+
+.field.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.submitBtn {
+  border: none;
+  outline: none;
+  background: #232323;
+  color: #fff;
+  font-size: 15px;
+  padding: calc((2 / 3) * 15px) 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.forgotPassword {
+  text-decoration: none;
+  color: #000;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
 }

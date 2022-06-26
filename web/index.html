@@ -6,47 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="tabs">
-      <h3 class="tab">New Account</h3>
-      <h3 class="tab active">Sign in</h3>
-    </div>
-
-
-<div class="loginForm">
-    <form action="login.php" method="post">
-
-        <label for="username">Username:</label>
-        <input class="field" type="text" name="username" id="username" />
-
-      <br>
-
-        
-        <label for="password">Password:</label>
-        <input class="field" type="password" name="password" id="password" />
-      
-      
-      <br>
-
-      <br>
-      <div class="rightAligned">
-
-        <input class="login-button" type="submit" value="Login" />
+    <main>
+      <div class="tabs">
+        <p class="tab inactive">New Account</p>
+        <p class="tab active">Sign in</p>
       </div>
-    </form>
-  </div>
 
+      <div class="form">
+        <form action="process.php" method="get">
+          <div class="field">
+            <input type="email" name="email" id="email" class="textInput" />
+            <label class="label" for="email">Email</label>
+          </div>
+          <div class="field top-spacing">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="textInput"
+            />
+            <label class="label" for="password">Password</label>
+          </div>
 
+          <div class="field buttons top-spacing">
+            <a href="./forgotPassword" class="forgotPassword"
+              >Forgot password?</a
+            >
+            <button class="submitBtn" type="submit">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </main>
 
-    <form action="signup.php" method="post">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" />
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" />
-      <input type="submit" value="Sign Up" />
+    <script src="script.js"></script>
   </body>
 </html>
