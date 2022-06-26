@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "circular";
+  src: url("./Circular.ttf");
+}
+
+.tabs {
+  display: flex;
+  width: max-content;
+  margin-inline: auto;
+}
+
+.tab {
+  font-size: 16px;
+  margin-inline: 10px;
+  cursor: pointer;
+  font-family: "circular", "Roboto", sans-serif;
+  position: relative;
+}
+
+.tab.active::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #f85563;
+  position: absolute;
+  bottom: -5px;
+  display: block;
+}
+
+.loginForm {
+  width: 50vw;
+  max-width: 500px;
+  min-width: 2rem;
+  margin-inline: auto;
+}
+
+.rightAligned {
+  text-align: right;
+}
+
+.field {
+  width: 100%;
+}
