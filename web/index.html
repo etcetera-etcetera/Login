@@ -15,7 +15,7 @@
       </div>
 
       <div class="form">
-        <form action="process.php" method="get">
+        <form action="javascript:void(0)" method="get">
           <div class="field">
             <input type="email" name="email" id="email" class="textInput" />
             <label class="label" for="email">Email</label>
@@ -36,10 +36,16 @@
             >
             <button class="submitBtn" type="submit">Sign in</button>
           </div>
+          <div class="field errorBox">
+            <p class="error hidden">-</p>
+          </div>
         </form>
       </div>
     </main>
 
+    <!-- Contains the firebaseConfig -->
+    <script src="firebaseConfig.js"></script>
+    <script type="module" src="firebase.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

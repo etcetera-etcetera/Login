@@ -15,6 +15,10 @@ function toggleTab(i) {
   tabs[1].classList.toggle("active");
   tabs[1].classList.toggle("inactive");
 
+  var errorDOM = document.querySelector(".error");
+  errorDOM.style.opacity = "0";
+  errorDOM.textContent = ".";
+
   var currentTab = tabs[i];
   if (i == 0) {
     submitBtn.textContent = "Register";
