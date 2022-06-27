@@ -15,14 +15,11 @@ function toggleTab(i) {
   tabs[1].classList.toggle("active");
   tabs[1].classList.toggle("inactive");
 
-<<<<<<< HEAD
-=======
   var errorDOM = document.querySelector(".error");
   errorDOM.style.opacity = "0";
   errorDOM.textContent = ".";
 
   var currentTab = tabs[i];
->>>>>>> origin/database-link-web
   if (i == 0) {
     submitBtn.textContent = "Register";
     forgotPassword.style.display = "none";
