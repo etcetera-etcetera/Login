@@ -25,9 +25,7 @@ async function signin(process) {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  console.log("works");
   var users = await getUsers(db);
-  console.log(users, process);
 
   var userNotFound = false;
   if (process == "sign in") {
