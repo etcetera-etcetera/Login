@@ -73,7 +73,7 @@ body {
 }
 
 .form .textInput {
-  padding: 15px;
+  padding: 20px 15px;
   width: calc(100% - 30px);
   font-size: 16px;
   border: 1px solid #ccc;
@@ -92,7 +92,7 @@ body {
   left: 15px;
   transform: translateY(-50%);
   color: #888;
-  transition: 0.2s;
+  transition: 0.4s;
   font-family: "circular", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -102,14 +102,24 @@ body {
   margin-top: 15px;
 }
 
-.field:focus-within .label {
+.field .textInput:focus ~ label,
+.field .textInput:valid ~ label {
   top: 20px;
   font-size: 12px;
 }
 
-.field:focus-within .textInput {
-  padding-top: 30px;
-  border: 2px solid #ccc;
+.field .textInput:focus,
+.field .textInput:valid {
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.errorMsgEmail {
+  margin-top: 2px;
+  font-size: 12px;
+  margin-left: 5px;
+  color: #f85563;
+  opacity: 0;
 }
 
 .field.buttons {

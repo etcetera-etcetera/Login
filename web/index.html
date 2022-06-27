@@ -17,15 +17,24 @@
       <div class="form">
         <form action="process.php" method="get">
           <div class="field">
-            <input type="email" name="email" id="email" class="textInput" />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="textInput"
+              required
+              oninput="checkEmail()"
+            />
             <label class="label" for="email">Email</label>
           </div>
+          <p class="errorMsgEmail">Invalid email.</p>
           <div class="field top-spacing">
             <input
               type="password"
               name="password"
               id="password"
               class="textInput"
+              required
             />
             <label class="label" for="password">Password</label>
           </div>

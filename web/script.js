@@ -15,12 +15,24 @@ function toggleTab(i) {
   tabs[1].classList.toggle("active");
   tabs[1].classList.toggle("inactive");
 
-  var currentTab = tabs[i];
   if (i == 0) {
     submitBtn.textContent = "Register";
     forgotPassword.style.display = "none";
   } else {
     submitBtn.textContent = "Sign in";
     forgotPassword.style.display = "block";
+  }
+}
+
+function checkEmail() {
+  const email = document.getElementById("email").value;
+  const regex = /..+@..+/;
+  var matches = regex.test(email);
+  console.log(matches);
+
+  if (!matches) {
+    document.querySelector(".errorMsgEmail").style.opacity = "1";
+  } else {
+    document.querySelector(".errorMsgEmail").style.opacity = "0";
   }
 }
