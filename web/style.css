@@ -150,3 +150,17 @@ body {
 .forgotPassword:hover {
   text-decoration: underline;
 }
+
+.errorBox {
+  text-align: right;
+  color: #f85563;
+}
+
+.error {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.error.hidden {
+  opacity: 0;
+}
