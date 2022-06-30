@@ -1,2 +1,5 @@
 .DS_Store
 /web/firebaseConfig.js
+web/vendor/
+web/firebaseConfig.json
+web/dbcon.php
